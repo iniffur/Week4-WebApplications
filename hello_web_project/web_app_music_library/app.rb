@@ -58,13 +58,7 @@ class Application < Sinatra::Base
 
   get '/albums' do
     repo = AlbumRepository.new
-    albums = repo.all
-    index = 1
-    albums.each do |album|
-      instance_variable_set "@title_#{index}", album.title
-      instance_variable_set "@release_year_#{index}", album.release_year
-      index += 1
-    end
+    @albums = repo.all
     return erb(:albums)
   end
 

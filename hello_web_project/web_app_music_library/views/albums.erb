@@ -4,66 +4,13 @@
   <head></head>
   <body>
     <h1>Albums</h1>
-
+    
+    <% @albums.each do |album|%>
     <div>
-      Title: <%= @title_1 %>
-      Released: <%= @release_year_1 %>
-    </div>
-
+    Title: <%= album.title%> - 
+    Release Year: <%= album.release_year%>
     <div>
-      Title: <%= @title_2 %>
-      Released: <%= @release_year_2 %>
-    </div>
-
-        <div>
-      Title: <%= @title_3 %>
-      Released: <%= @release_year_3 %>
-    </div>
-
-    <div>
-      Title: <%= @title_4 %>
-      Released: <%= @release_year_4 %>
-    </div>
-
-        <div>
-      Title: <%= @title_5 %>
-      Released: <%= @release_year_5 %>
-    </div>
-
-    <div>
-      Title: <%= @title_6 %>
-      Released: <%= @release_year_6 %>
-    </div>
-
-        <div>
-      Title: <%= @title_7 %>
-      Released: <%= @release_year_7 %>
-    </div>
-
-    <div>
-      Title: <%= @title_8 %>
-      Released: <%= @release_year_8 %>
-    </div>
-
-        <div>
-      Title: <%= @title_9 %>
-      Released: <%= @release_year_9 %>
-    </div>
-
-    <div>
-      Title: <%= @title_10 %>
-      Released: <%= @release_year_10 %>
-    </div>
-
-        <div>
-      Title: <%= @title_11 %>
-      Released: <%= @release_year_11 %>
-    </div>
-
-    <div>
-      Title: <%= @title_12 %>
-      Released: <%= @release_year_12 %>
-    </div>
+    <% end %>
 
     <!-- ... -->
   </body>
