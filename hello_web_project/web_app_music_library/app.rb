@@ -37,11 +37,11 @@ class Application < Sinatra::Base
   #   return JSON.generate(hash)
   # end
 
-  get '/artists' do
-    repo = ArtistRepository.new
-    artists = repo.all
-    artists.map {|artist| artist.name}.join(', ')
-  end
+  # get '/artists' do
+  #   repo = ArtistRepository.new
+  #   artists = repo.all
+  #   artists.map {|artist| artist.name}.join(', ')
+  # end
 
   post '/artists' do
     artist = Artist.new
@@ -73,5 +73,21 @@ class Application < Sinatra::Base
 
     return erb(:hello)
     #test
+  end
+
+  get '/artists' do
+    artist_repo = ArtistRepository.new
+    @artists = artist_repo.all
+    return erb(:artists)
+  end
+  
+  get '/artists/:id' do
+    artist_repo = ArtistRepository.new
+    @artist_id = params[:id]
+    artist = artist_repo.find(@artist_id)
+    @name = artist.name
+    @genre = artist.genre
+
+    return erb(:artist)
   end
 end
