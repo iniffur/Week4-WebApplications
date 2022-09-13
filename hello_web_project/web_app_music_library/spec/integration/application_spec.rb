@@ -66,4 +66,14 @@ describe Application do
     end
   end
 
+  context 'GET to /albums' do
+    it 'Returns a list of all albums' do
+      response = get('/albums')
+      expect(response.status).to eq 200
+      expect(response.body).to include('<h1>Albums</h1>')
+      expect(response.body).to include('Title: Doolittle')
+      expect(response.body).to include('Title: Surfer Rosa')
+    end
+  end
+
 end
