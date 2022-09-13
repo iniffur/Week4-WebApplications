@@ -7,7 +7,7 @@
     
     <% @albums.each do |album|%>
     <div>
-    Title: <%= album.title%> - 
+    Title: <a href="/albums/<%= album.id %>"><%= album.title%></a> - 
     Release Year: <%= album.release_year%>
     <div>
     <% end %>
